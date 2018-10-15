@@ -4,7 +4,7 @@ public class GameObject {
   float y;
   float size;
 
-  boolean alive = true;
+  boolean alive = false;
 
   public GameObject(float x, float y, float size){
    this.x=x;
@@ -13,12 +13,13 @@ public class GameObject {
   }
 
 
-  void drawObject(){
-
-    if(alive){
-      println("Va Fan?");
+  void draw(){
+    
+    if(alive){      
+      fill(255, 40, 50);
       ellipse(x, y, size, size);
     }
+        
   }
 
 }
