@@ -1,4 +1,4 @@
-public class GameManager{
+public class CheckCells{
 int edgeY=numberOfRows-1;
 int edgeX=numberOfColumns-1;
 

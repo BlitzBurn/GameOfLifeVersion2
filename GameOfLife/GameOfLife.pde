@@ -18,7 +18,7 @@ int fillPercentage=65;
     numberOfColumns= (int)Math.floor(width/cellSize);
     numberOfRows=(int)Math.floor(height/cellSize);
     
-    manager = new GameManager();
+    checkCells = new CheckCells();
     controller= new Controller();
 
     cells = new GameObject[numberOfColumns][numberOfRows];
