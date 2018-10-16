@@ -7,6 +7,8 @@ int edgeX=numberOfColumns-1;
     for(int y=0; y<numberOfRows; y++){
       for(int x=0; x<numberOfColumns; x++){
 
+        boolean checkResult=false;
+
         int neighbors=0;
 
           if(x!=0 && y!=0){
@@ -37,22 +39,28 @@ int edgeX=numberOfColumns-1;
 
 
       if((cells[x][y].alive==true) && neighbors<2){
-        cells[x][y].alive=false;
+        //cells[x][y].alive=false;
+        checkResult=false;
       }
 
       else if((cells[x][y].alive==true) && neighbors>3){
-        cells[x][y].alive=false;
+        //cells[x][y].alive=false;
+        checkResult=false;
       }
 
       else if((cells[x][y].alive==false) && neighbors==3){
-        cells[x][y].alive=true;
+        //cells[x][y].alive=true;
+        //checkResult=true;
+          checkResult=true;
       }
 
       else if((cells[x][y].alive==true) && neighbors==2){
-        cells[x][y].alive=true;
+        //cells[x][y].alive=true;
+          checkResult=true;
       }
 
-      //cells=newCells;
+    cells[x][y].alive=checkResult;
+    generations=generations+1;
 
       }
     }

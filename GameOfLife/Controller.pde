@@ -6,9 +6,10 @@ public class Controller{
     for(int y=0; y<numberOfRows; y++){
         for(int x=0; x<numberOfColumns; x++){
 
-          //checkCells.checkGrid();
+          checkCells.checkGrid();
           cells[x][y].draw();
-
+          println(generations);
+        //  delay(200);
         }
       }
 

@@ -7,7 +7,8 @@ CreateCells createCellsCall;
 float cellSize=10;
 int numberOfColumns;
 int numberOfRows;
-int fillPercentage=15;
+int fillPercentage=65;
+int generations=0;
 //boolean gameRandom=true;
 
   void setup(){
@@ -35,8 +36,9 @@ int fillPercentage=15;
 
   void draw(){
       background(1);
+      delay(250);
       controller.update();
-//delay(1000);
+
   }
 
 
