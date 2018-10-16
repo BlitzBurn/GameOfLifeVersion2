@@ -2,11 +2,12 @@ GameObject cells[][];
 GameObject newCells[][];
 
 Controller controller;
+CreateCells createCellsCall;
 
 float cellSize=10;
 int numberOfColumns;
 int numberOfRows;
-int fillPercentage=65;
+int fillPercentage=15;
 //boolean gameRandom=true;
 
   void setup(){
@@ -17,26 +18,19 @@ int fillPercentage=65;
 
     numberOfColumns= (int)Math.floor(width/cellSize);
     numberOfRows=(int)Math.floor(height/cellSize);
-    
+
     checkCells = new CheckCells();
     controller= new Controller();
+    createCellsCall = new CreateCells();
+
 
     cells = new GameObject[numberOfColumns][numberOfRows];
     newCells = new GameObject[numberOfColumns][numberOfRows];
-   
 
-      for(int y=0; y<numberOfColumns; y++){
-        for(int x=0; x<numberOfRows; x++){
-  
-          cells[x][y]= new GameObject(x*cellSize, y*cellSize, cellSize);
-                  
-                  if(random(0,100)<fillPercentage){
-                  cells[x][y].alive=true;
-                  }
-        }
-      }
 
-      
+    createCellsCall.createCells();
+
+
   }
 
   void draw(){
@@ -52,7 +46,7 @@ int fillPercentage=65;
        /*   for(int y=0; y<numberOfColumns; y++){
             for(int x=0; x<numberOfRows; x++){
 
-              
+
               }
 
             }

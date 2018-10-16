@@ -1,0 +1,10 @@
+boolean spaceBar;
+
+
+void keyPressed(){
+	if(keyCode == 32) spaceBar = true;
+}
+
+void keyReleased(){
+	if(keyCode == 32) spaceBar = false;	
+}

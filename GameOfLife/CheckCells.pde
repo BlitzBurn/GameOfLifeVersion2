@@ -33,26 +33,26 @@ int edgeX=numberOfColumns-1;
           if(x!=edgeX && y!=edgeY){
             if((cells[x+1][y+1].alive==true)) {neighbors++;}
           }
-           
-           
-           
+
+
+
       if((cells[x][y].alive==true) && neighbors<2){
-        newCells[x][y].alive=false;
+        cells[x][y].alive=false;
       }
-       
+
       else if((cells[x][y].alive==true) && neighbors>3){
-        newCells[x][y].alive=false;
+        cells[x][y].alive=false;
       }
 
       else if((cells[x][y].alive==false) && neighbors==3){
-        newCells[x][y].alive=true;
+        cells[x][y].alive=true;
       }
 
       else if((cells[x][y].alive==true) && neighbors==2){
-        newCells[x][y].alive=true;
+        cells[x][y].alive=true;
       }
-      
-      cells=newCells;
+
+      //cells=newCells;
 
       }
     }
