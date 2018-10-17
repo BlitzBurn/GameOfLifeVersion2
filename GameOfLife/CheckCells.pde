@@ -12,55 +12,53 @@ int edgeX=numberOfColumns-1;
         int neighbors=0;
 
           if(x!=0 && y!=0){
-            if((cells[x-1][y-1].alive==true)) {neighbors++;}
+            if((oldCells[x-1][y-1].alive==true)) {neighbors++;}
           }
           if(x!=0){
-            if((cells[x-1][y].alive==true)) {neighbors++;}
+            if((oldCells[x-1][y].alive==true)) {neighbors++;}
           }
           if(x!=0 && y!=edgeY){
-            if((cells[x-1][y+1].alive==true)) {neighbors++;}
+            if((oldCells[x-1][y+1].alive==true)) {neighbors++;}
           }
           if(y!=0){
-            if((cells[x][y-1].alive==true)) {neighbors++;}
+            if((oldCells[x][y-1].alive==true)) {neighbors++;}
           }
           if(y!=edgeY){
-            if((cells[x][y+1].alive==true)) {neighbors++;}
+            if((oldCells[x][y+1].alive==true)) {neighbors++;}
           }
           if(x!=edgeX && y!=0){
-            if((cells[x+1][y-1].alive==true)) {neighbors++;}
+            if((oldCells[x+1][y-1].alive==true)) {neighbors++;}
           }
           if(x!=edgeX){
-            if((cells[x+1][y].alive==true)) {neighbors++;}
+            if((oldCells[x+1][y].alive==true)) {neighbors++;}
           }
           if(x!=edgeX && y!=edgeY){
-            if((cells[x+1][y+1].alive==true)) {neighbors++;}
+            if((oldCells[x+1][y+1].alive==true)) {neighbors++;}
           }
 
 
 
-      if((cells[x][y].alive==true) && neighbors<2){
-        //cells[x][y].alive=false;
+      if((oldCells[x][y].alive==true) && neighbors<2){
         checkResult=false;
       }
 
-      else if((cells[x][y].alive==true) && neighbors>3){
-        //cells[x][y].alive=false;
+      if((oldCells[x][y].alive==true) && neighbors>3){
         checkResult=false;
       }
 
-      else if((cells[x][y].alive==false) && neighbors==3){
-        //cells[x][y].alive=true;
-        //checkResult=true;
-          checkResult=true;
+      if((oldCells[x][y].alive==false) && neighbors==3){
+        checkResult=true;
       }
 
-      else if((cells[x][y].alive==true) && neighbors==2){
-        //cells[x][y].alive=true;
-          checkResult=true;
+      if((oldCells[x][y].alive==true) && neighbors==2){
+        checkResult=true;
       }
 
-    cells[x][y].alive=checkResult;
-    generations=generations+1;
+      if((oldCells[x][y].alive==true) && neighbors==3){
+        checkResult=true;
+      }
+
+        cells[x][y].alive=checkResult;
 
       }
     }

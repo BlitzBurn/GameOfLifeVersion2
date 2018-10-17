@@ -1,5 +1,5 @@
 GameObject cells[][];
-GameObject newCells[][];
+GameObject oldCells[][];
 
 Controller controller;
 CreateCells createCellsCall;
@@ -9,7 +9,11 @@ int numberOfColumns;
 int numberOfRows;
 int fillPercentage=65;
 int generations=0;
-//boolean gameRandom=true;
+
+//game random ger ett slumpvalt bräde
+boolean gameRandom=false;
+//spawnAcorn skapar ett "Acorn"
+boolean spawnAcorn=true;
 
   void setup(){
 
@@ -20,57 +24,22 @@ int generations=0;
     numberOfColumns= (int)Math.floor(width/cellSize);
     numberOfRows=(int)Math.floor(height/cellSize);
 
+    copyCells = new CopyCells();
     checkCells = new CheckCells();
     controller= new Controller();
     createCellsCall = new CreateCells();
 
 
     cells = new GameObject[numberOfColumns][numberOfRows];
-    newCells = new GameObject[numberOfColumns][numberOfRows];
+    oldCells = new GameObject[numberOfColumns][numberOfRows];
 
 
-    createCellsCall.createCells();
+
 
 
   }
 
   void draw(){
       background(1);
-      delay(250);
       controller.update();
-
   }
-
-
-
-//  if(gameRandom==true){
-
-       /*   for(int y=0; y<numberOfColumns; y++){
-            for(int x=0; x<numberOfRows; x++){
-
-
-              }
-
-            }
-          }
-*/
-        //}
-
-        // else if (gameRandom==false){
-        //
-        //   for(int y=0; y<numberOfColumns; y++){
-        //     for(int x=0; x<numberOfRows; x++){
-        //
-        //     cells[x][y].alive=false;
-        //
-        //     }
-        //   }
-        //
-        //     cells[20][20].alive=true;
-        //     cells[21][20].alive=true;
-        //     cells[24][20].alive=true;
-        //     cells[25][20].alive=true;
-        //     cells[26][20].alive=true;
-        //     cells[21][18].alive=true;
-        //     cells[23][19].alive=true;
-        // }
